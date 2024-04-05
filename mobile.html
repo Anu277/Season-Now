@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="shortcut icon" href="https://cdn.weatherapi.com/weather/64x64/day/113.png">
+    <script src="https://kit.fontawesome.com/a53285079f.js" crossorigin="anonymous"></script>
+    <title>Weather</title>
+</head>
+<body>
+    <main>
+        <!--Weather forecast with weatherapi-->
+        <div class="container">
+            <div class="weather">
+                <div class="weather-panel">
+                    <div class="weather-img">
+                        <img src="/clear.webp" alt="Clear-sky" srcset="">
+                    </div>
+                    <div class="weather-info">
+                        <h1>Weather Forecast</h1>
+                        <div class="search-box">
+                            <div class="search">
+                                <input type="search" name="search" id="search" placeholder="City">
+                                <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="search-results">
+                               <h4></h4>
+                                <h2 class="city"></h2>
+                            </div>
+                        </div>
+                        <div class="weather-forecast">
+                            <div class="temp card">
+                                <i class="fa-solid fa-temperature-three-quarters fa-fade fa-lg" style="color: #000000;"></i>
+                                <h2 class="temperature">0</h2><span>°C</span>
+                                <p>Avg Temp</p>
+                            </div>
+                            <div class="climate-info card">
+                                <i class="fa fa-cloud fa-fade fa-lg"></i>
+                                <h2 class="climate">_</h2>
+                                <p>Day Condition</p>
+                            </div>
+                            <div class="pressure card">
+                                <i class="fas fa-stopwatch-20 fa-fade fa-lg" style="color: #000000;"></i>
+                                <h2 class="pressure-val">0</h2><span>hPa</span>
+                                <p>Pressure</p>
+                            </div>
+                            <div class="humidity card">
+                                <a href="https://www.flaticon.com/free-icons/humidity" title="humidity icons"><img style="height:20px" src="humidity.webp" alt="" srcset=""></a>
+                                <h2 class="humidity-val">0</h2><span>%</span>
+                                <p>Avg Humidity</p>
+                            </div>
+                            <div class="sun card">
+                                <i class="fas fa-clock"></i>
+                                <h3 class="sunrise">0</h3>
+                                <h3 class="sunset">0</h3>
+                                <p>Sun rise/set</p>
+                            </div>
+                            <div class="wind card">
+                                <i class="fa-solid fa-wind fa-lg" style="color: #000000;"></i>
+                                <h2 class="wind-speed">0</h2><span>km/hr</span>
+                                <p>Avg Wind-speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="/mobile/scriptx.js"></script>
+    <script>// Get the search input element
+        const searchInput = document.getElementById('search');
+        
+        // Add event listener for keypress event on the search input
+        searchInput.addEventListener('keypress', function(event) {
+          // Check if the pressed key has key code 13 (Enter key)
+          if (event.keyCode === 13) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Call the handleSearch function
+            handleSearch();
+          }
+        });
+    </script>
+</body>
+</html>
